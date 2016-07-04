@@ -58,10 +58,10 @@ class Captcha {
     }
 
 
-    save(dirpath) {
+    save(dirpath, callback) {
         if (!this.captcha)
             this.generate();
-        this.captcha.save(dirpath);
+        this.captcha.save(dirpath, callback);
     }
 }
 

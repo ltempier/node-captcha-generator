@@ -12,11 +12,14 @@ class Image extends Jimp {
         this.constructor = Jimp;
     }
 
-    save(dirPath) {
+    save(dirPath, callback) {
+        if ("undefined" == typeof callback)
+            callback = function () {};
+
         var filename = [this.value, this.index].filter(function (val) {
                 return val
             }).join('_') + '.bmp';
-        super.write(path.join(dirPath || './tmp/', filename));
+        super.write(path.join(dirPath || './tmp/', filename), callback);
     }
 
     toBase64(callback) {
