@@ -30,11 +30,13 @@ var Image = function (_Jimp) {
 
     _createClass(Image, [{
         key: 'save',
-        value: function save(dirPath) {
+        value: function save(dirPath, callback) {
+            if ("undefined" == typeof callback) callback = function callback() {};
+
             var filename = [this.value, this.index].filter(function (val) {
                 return val;
             }).join('_') + '.bmp';
-            _get(Object.getPrototypeOf(Image.prototype), 'write', this).call(this, path.join(dirPath || './tmp/', filename));
+            _get(Object.getPrototypeOf(Image.prototype), 'write', this).call(this, path.join(dirPath || './tmp/', filename), callback);
         }
     }, {
         key: 'toBase64',

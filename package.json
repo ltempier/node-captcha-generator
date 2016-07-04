@@ -1,5 +1,5 @@
 {
-  "name": "node-captcha",
+  "name": "node-captcha-generator",
   "version": "0.0.1",
   "description": "captcha image generator",
   "main": "index.js",

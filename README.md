@@ -1,17 +1,17 @@
 
 
 
-## node-captcha
+## node-captcha-generator
 
-node-captcha is a captcha generator write in pure js, thanks to [oliver-moran](https://github.com/oliver-moran/jimp).
+node-captcha-generator is a captcha generator write in pure js, thanks to [oliver-moran](https://github.com/oliver-moran/jimp).
 
-node-captcha generate only numeric captcha, it use [MNIST database](http://yann.lecun.com/exdb/mnist/) to generate random number combination.
+node-captcha-generator generate only numeric captcha, it use [MNIST database](http://yann.lecun.com/exdb/mnist/) to generate random number combination.
 
 Example usage:
 
 ```js
 
-    let Captcha = require('node-captcha');
+    let Captcha = require('node-captcha-generator');
 
     var c = new Captcha({
         length:5, // number length

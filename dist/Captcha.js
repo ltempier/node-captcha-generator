@@ -65,9 +65,9 @@ var Captcha = function () {
         }
     }, {
         key: 'save',
-        value: function save(dirpath) {
+        value: function save(dirpath, callback) {
             if (!this.captcha) this.generate();
-            this.captcha.save(dirpath);
+            this.captcha.save(dirpath, callback);
         }
     }]);
 
