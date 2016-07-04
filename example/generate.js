@@ -4,9 +4,9 @@ var Captcha = require('../');
 
 console.time('process');
 
-for (var i = 0; i < 1; i++) {
+for (var i = 0; i < 5; i++) {
     var c = new Captcha({
-        length:6
+        length:5
     });
     c.save(__dirname);
 }
