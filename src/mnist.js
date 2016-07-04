@@ -27,9 +27,7 @@ class Mnist {
                     image.setPixelColor(Image.rgbaToInt(pixel, pixel, pixel, 1), x, y);
             }
         }
-
         image.randomize();
-
         return image
     }
 

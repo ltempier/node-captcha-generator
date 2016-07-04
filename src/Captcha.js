@@ -4,19 +4,15 @@ var _ = require('lodash'),
     Image = require("./Image"),
     mnist = require('./mnist');
 
-
 class Captcha {
     constructor(options) {
 
-        this.length = 5;
-        this.size = {
-            width: 450,
-            height: 200
-        };
-
-        _.each(options || {}, (value, key) => {
-            if (!_.isUndefined(value))
-                this[key] = value
+        _.defaultsDeep(this, options || {}, {
+            length: 5,
+            size: {
+                width: 450,
+                height: 200
+            }
         });
 
         this.init();
@@ -62,10 +58,10 @@ class Captcha {
     }
 
 
-    save() {
+    save(dirpath) {
         if (!this.captcha)
             this.generate();
-        this.captcha.save();
+        this.captcha.save(dirpath);
     }
 }
 

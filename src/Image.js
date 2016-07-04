@@ -7,10 +7,8 @@ var _ = require('lodash'),
 class Image extends Jimp {
     constructor(w, h, value, index) {
         super(w, h);
-
         this.value = value;
         this.index = index;
-
         this.constructor = Jimp;
     }
 
@@ -30,20 +28,11 @@ class Image extends Jimp {
         })
     }
 
-    setOptions(options) {
-
-    }
-
     getRandomOptions() {
-
-        var color1 = 1,
-            color2 = _.random(0.0, color1),
-            color3 = _.random(0.0, color2);
 
         var options = {
             height: _.random.apply(null, [80, 200]),
-            rotate: _.random.apply(null, [-10, 10]),
-            color: _.shuffle([color1, color2, color3])
+            rotate: _.random.apply(null, [-10, 10])
         };
 
         switch (this.value) {
@@ -64,21 +53,9 @@ class Image extends Jimp {
 
     randomize(options) {
         options = options || this.getRandomOptions();
-
         this.resize(Jimp.AUTO, options.height);
         this.rotate(options.rotate);
         this.autocrop();
-    }
-
-    colorize(options) {
-        options = options || this.getRandomOptions();
-        this.scan(0, 0, this.bitmap.width, this.bitmap.height, function (x, y, idx) {
-            if (this.bitmap.data[idx + 3]) {
-                this.bitmap.data[idx + 0] *= options.color[0];
-                this.bitmap.data[idx + 1] *= options.color[1];
-                this.bitmap.data[idx + 2] *= options.color[2]
-            }
-        });
     }
 }
 
