@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/ltempier/node-captcha.git"
+    "url": "git://github.com/ltempier/node-captcha-generator.git"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
